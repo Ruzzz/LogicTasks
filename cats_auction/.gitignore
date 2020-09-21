@@ -1,0 +1,13 @@
+temp/
+*.pyc
+
+.coverage
+.idea
+.pytest_cache
+.venv
+.vscode
+
+bin
+coverage_html_report
+venv
+Makefile.local

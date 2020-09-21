@@ -1,0 +1,3 @@
+- Validation: pydantic or marshmallow
+- Tests
+- OpenAPI
