@@ -26,6 +26,10 @@ class Monomial:
         power = self.power + other.power
         return Monomial(coefficient, indeterminate, power)
 
+    def __add__(self, other: 'Monomial'):
+        assert self.power == other.power
+        return Monomial(self.coefficient + other.coefficient, self.indeterminate, self.power)
+
 
 Polynomial = List[Monomial]
 
@@ -71,7 +75,16 @@ class PolynomialExpander:
             for monomial2 in polynomials[1]:
                 expanded_monomials.append(monomial1 * monomial2)
         expanded_monomials.sort(key=lambda x: -x.power)
-        ret = ''.join(str(x) for x in expanded_monomials)
+
+        ret = [expanded_monomials[0]]
+        for x in expanded_monomials[1:]:
+            if x.power == ret[-1].power:
+                ret[-1] += x
+            else:
+                ret.append(x)
+
+        # to string
+        ret = ''.join(str(x) for x in ret)
         if ret[0] == '+':
             ret = ret[1:]
         return ret
