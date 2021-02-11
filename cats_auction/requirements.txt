@@ -1,4 +1,0 @@
-aiohttp==3.6.2
-asyncpg==0.20.1
-gino==1.0.1
-psycopg2-binary==2.8.5

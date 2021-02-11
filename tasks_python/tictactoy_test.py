@@ -1,6 +1,6 @@
 import pytest
 
-from tictactoy.tictactoy import TicTacToy, Player
+from tictactoy import TicTacToy, Player
 
 
 @pytest.fixture
