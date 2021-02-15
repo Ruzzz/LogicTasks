@@ -1,0 +1,14 @@
+version: '2'
+services:
+  logictasks_db:
+    image: postgres:12-alpine
+    container_name: logictasks-db
+    restart: "no"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=dev
+      - POSTGRES_DB=logictasks
+    volumes:
+      - /var/lib/postgresql/data/
