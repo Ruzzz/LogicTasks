@@ -6,6 +6,7 @@ import pytest
 class ListNode:
 
     def __init__(self, val=0, next=None):
+        # assert 0 <= val <= 9
         self.val = val
         self.next = next
 
